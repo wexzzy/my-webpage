@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task 3 — Table & Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Task 3: Workout Progress & Feedback</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="task1.html">Task 1</a>
+      <a href="task2.html">Task 2</a>
+      <a href="task3.html">Task 3</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <!-- Table -->
+    <h2 id="grades-heading">Workout Progress</h2>
+    <table>
+      <tr>
+        <th>Exercise</th>
+        <th>Weight</th>
+        <th>Reps</th>
+      </tr>
+      <tr>
+        <td>Bench Press</td>
+        <td>70 kg</td>
+        <td>8</td>
+      </tr>
+      <tr class="highlight-row">
+        <td>Deadlift</td>
+        <td>110 kg</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Squat</td>
+        <td>90 kg</td>
+        <td>6</td>
+      </tr>
+    </table>
+
+    <!-- Form -->
+    <h2>Feedback Form</h2>
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br>
+
+      <label for="role">Role:</label><br>
+      <select id="role" name="role">
+        <option>Student</option>
+        <option>Trainer</option>
+        <option>Other</option>
+      </select><br>
+
+      <p>Do you track your workouts?</p>
+      <input type="radio" id="trackYes" name="track" value="yes"><label for="trackYes"> Yes</label>
+      <input type="radio" id="trackNo" name="track" value="no"><label for="trackNo"> No</label><br>
+
+      <label for="comments">Comments:</label><br>
+      <textarea id="comments" name="comments"></textarea><br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Arsen Bakytzhanov | MT-2405</p>
+  </footer>
+</body>
+</html>

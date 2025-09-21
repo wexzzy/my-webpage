@@ -1,204 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Arsen's Webpage</title>
-        <link href="https://fonts.googleapis.com/css2?family=Asset&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-        <style>
-          /* style */
-          body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #000000, #2c2c2c);
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-          }
-          h1 {
-            font-family: 'Oswald', sans-serif;
-            font-stretch: expanded;
-            text-align: center;
-            margin-top: 50px;
-            font-size: 72px;
-            color: #ff0000;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-          }
-          h2, h3 {
-            text-align: center;
-            margin-top: 10px;
-            font-weight: 600;
-            color: #cccccc;
-          }
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignment 2 — Arsen Bakytzhanov</title>
 
-          p {
-            text-align: center;
-          }
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 
-          table {
-            margin-left: auto;
-            margin-right: auto;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background: #1a1a1a;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.5);
-          }
+  <!-- Google Fonts (used across pages) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <h1>Assignment 2: Web Development</h1>
+    <nav>
+      <a href="task1.html">Task 1: Layout</a>
+      <a href="task2.html">Task 2: Tribute Page</a>
+      <a href="task3.html">Task 3: Table & Form</a>
+      <a href="https://figma.com/" target="_blank" rel="noopener">Task 4: Wireframe</a>
+    </nav>
+  </header>
 
-          table th {
-            background: #ff0000;
-            color: white;
-          }
+  <!-- Main content -->
+  <main class="content">
+    <h2>Welcome</h2>
+    <p>This project contains parts of Assignment 2 prepared by <strong>Arsen Bakytzhanov</strong>, group <strong>MT-2405</strong>.</p>
+    <p>Use the navbar to open each task page. All styles are in <code>styles.css</code>.</p>
+  </main>
 
-          table th, table td {
-            padding: 12px 18px;
-            text-align: center;
-            border: 1px solid #333;
-          }
-
-          ul, ol {
-            list-style-position: inside;
-            text-align: center;
-            padding: 0;
-            margin: 10px 0;
-          }
-
-          ul li a {
-            text-decoration: none;
-            color: #ff0000;
-            font-weight: 600;
-            transition: 0.3s;
-          }
-
-          ul li a:hover {
-            color: #ffffff;
-          }
-
-          img {
-            display: block;
-            margin: 20px auto;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-          }
-
-          form {
-            text-align: center;
-            margin-top: 30px;
-          }
-
-          input, button {
-            font-family: 'Montserrat', sans-serif;
-          }
-
-          button {
-            width: 200px;
-            height: 50px;
-            font-size: 18px;
-            display: block;
-            margin: 20px auto;
-            border: none;
-            border-radius: 8px;
-            background: #ff0000;
-            color: white;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-          }
-
-          button:hover {
-            background: #cc0000;
-            transform: scale(1.05);
-          }
-
-          input[type="submit"] {
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            background: #ffffff;
-            color: #000000;
-            padding: 8px 15px;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-          }
-
-          input[type="submit"]:hover {
-            background: #ff0000;
-            color: #ffffff;
-            transform: scale(1.05);
-          }
-        </style>
-    </head>
-    <body>
-        <!-- header -->
-        <h1> arsen bakytzhanov </h1>
-        <h2> MT-2405 </h2>
-
-        <!-- about -->
-        <h3> about me </h3>
-        <p> nothing much </p>
-        <ol>
-            <li> gym (bodybuilding, powerlifting) </li>
-            <li> content creating </li>
-            <li> videography </li>
-        </ol>
-
-        <!-- links -->
-        <ul>
-            <li> <a href="https://www.youtube.com"> youtube </a> </li>
-            <li> <a href="https://web.telegram.org"> telegram </a> </li>
-            <li> <a href="https://kaspi.kz"> kaspi.kz </a></li>
-        </ul>
-
-        <!-- image -->
-        <img src="photo.jpg" alt="me" width="250">
-
-        <!-- button -->
-        <button onclick="alert('no functionality yet...')"> click me </button>
-
-        <!-- table -->
-        <table>
-            <tr>
-                <th> day </th>
-                <th> subject </th>
-                <th> time </th>
-            </tr>
-            <tr>
-                <td> monday </td>
-                <td> web </td>
-                <td> 10:00 </td>
-            </tr>
-            <tr>
-                <td> tuesday </td>
-                <td> cinematography </td>
-                <td> 14:00 </td>
-            </tr>
-            <tr>
-                <td> wednesday </td>
-                <td> screenwriting </td>
-                <td> 15:00 </td>
-            </tr>
-            <tr>
-                <td> thursday </td>
-                <td> russian </td>
-                <td> 16:00 </td>
-            </tr>
-            <tr>
-                <td> friday </td>
-                <td> operating systems </td>
-                <td> 12:00 </td>
-            </tr>
-        </table>
-
-        <!-- mood -->
-        <p> today i'm feeling gl☁️☁️☁️my </p>
-
-        <!-- form -->
-        <form>
-            name: <input type="text"><br><br>
-            email: <input type="email"><br><br>
-            favorite color: <input type="color"><br><br>
-            <input type="submit" value="submit">
-        </form>
-    </body>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Arsen Bakytzhanov | MT-2405</p>
+  </footer>
+</body>
 </html>
