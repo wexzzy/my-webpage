@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Community - AeonGYM</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header class="container-main site-header">
+    <div class="brand">
+      <div class="logo">Aeon<span class="gym">GYM</span></div>
+    </div>
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="index.html">Home</a>
+      <a href="training.html">Training</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="community.html">Community</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="container-main">
+    <section class="center">
+      <h2>Community & Contact</h2>
+      <p style="color:var(--muted)">Send feedback or sign up for community events.</p>
+    </section>
+
+    <section style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px">
+      <form class="form-card" action="#" method="post" aria-label="Contact form">
+        <div class="mb-2"><label for="name">Name</label><br><input id="name" name="name" type="text" required style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06)"></div>
+        <div class="mb-2"><label for="email">Email</label><br><input id="email" name="email" type="email" required style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06)"></div>
+        <div class="mb-2"><label for="message">Message</label><br><textarea id="message" name="message" rows="6" required style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06)"></textarea></div>
+        <button class="btn-primary-custom" type="submit">Send message</button>
+      </form>
+
+      <div>
+        <div class="form-card" style="margin-bottom:16px">
+          <h4>Latest Reviews</h4>
+          <div style="color:var(--muted)">
+            <p><strong>Alex</strong> — Great coaches, steady progress.</p>
+            <p><strong>Maria</strong> — Friendly community and clear plans.</p>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="accent-circle" aria-hidden="true"></div> <!-- всегда за контентом -->
+        </div>
+        <div class="form-card">
+          <h4>Events</h4>
+          <ul style="color:var(--muted)">
+            <li>Monthly challenge — 3rd Saturday</li>
+            <li>Nutrition Q&A — 2nd Wednesday</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container-main site-footer">
+    © 2025 AeonGYM | All Rights Reserved · <a href="about.html">Contact</a>
+  </footer>
+</body>
+</html>
