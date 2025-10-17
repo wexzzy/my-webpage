@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Arsen Bakytzhanov</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <section>
+      <form>
+          <label for="name">Name</label>
+          <br>
+          <input id="name" name="name" type="text" required minlength="2" maxlength="15" placeholder="Enter your name">
+          <br>
+          <label for="email">Email</label>
+          <br>
+          <input id="email" name="email" type="email" required placeholder="example@email.com">
+          <br>
+          <label for="message">Message</label>
+          <br>
+          <textarea id="message" name="message" required placeholder="Type your message..."></textarea>
+          <br>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <form class="row g-3 needs-validation" novalidate>
+
+      <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="First name" required minlength="2" maxlength="15">
+        <div class="form-text">
+          Please enter your full name.
+        </div>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Name is required.
+        </div>
+      </div>
+    
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="example@email.com" required>
+        <div class="form-text">
+          We'll never share your email with anyone else.
+        </div>
+        <div class="valid-feedback">
+          Email looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="3" placeholder="Enter your message..." required></textarea>
+        <div class="form-text">
+          Write any questions or comments you have.
+        </div>
+        <div class="valid-feedback">
+          Message looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please write a message.
+        </div>
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    
+    <form class="row g-3 needs-validation" novalidate>
+
+      <div class="col-md-6">
+        <label for="fname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="fname" placeholder="First name" required minlength="2" maxlength="15">
+        <div class="form-text">Please enter your first name.</div>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">First name is required.</div>
+      </div>
+    
+      <div class="col-md-6">
+        <label for="lname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lname" placeholder="Last name" required minlength="2" maxlength="15">
+        <div class="form-text">Please enter your last name.</div>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Last name is required.</div>
+      </div>
+   
+      <div class="col-12">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="example@email.com" required>
+        <div class="form-text">We'll never share your email with anyone else.</div>
+        <div class="valid-feedback">Email looks good!</div>
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="********" required minlength="8" maxlength="24">
+        <div class="form-text">Make sure your password is 8-24 characters long.</div>
+        <div class="valid-feedback">Password looks good!</div>
+        <div class="invalid-feedback">Please enter your password.</div>
+      </div>
+    
+      <div class="col-md-6">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword" placeholder="********" required minlength="8" maxlength="24" oninput="this.setCustomValidity('')">
+        <div class="invalid-feedback">Passwords do not match.</div>
+      </div>
+    
+      <div class="col-md-4">
+        <label class="form-label">Hobbies</label>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="hobby1">
+          <label class="form-check-label" for="hobby1">Football</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="hobby2">
+          <label class="form-check-label" for="hobby2">Singing</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="hobby3">
+          <label class="form-check-label" for="hobby3">Drawing</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="hobby4">
+          <label class="form-check-label" for="hobby4">Other</label>
+        </div>
+      </div>
+    
+      <div class="col-md-4">
+        <label class="form-label">Gender</label>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="male" name="gender" required>
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="female" name="gender" required>
+          <label class="form-check-label" for="female">Female</label>
+          <div class="valid-feedback">Nice!</div>
+          <div class="invalid-feedback">Please choose your gender.</div>
+        </div>
+      </div>
+    
+      <div class="col-md-4">
+        <label for="country" class="form-label">Country</label>
+        <select class="form-select" id="country" required>
+          <option value="">Choose...</option>
+          <option value="kazakhstan">Kazakhstan</option>
+          <option value="usa">USA</option>
+          <option value="other">Other</option>
+        </select>
+        <div class="valid-feedback">Nice!</div>
+        <div class="invalid-feedback">Please choose your country.</div>
+      </div>
+    
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+      </div>
+    </form>
+    
+    <script>
+      (() => {
+  'use strict';
+  const forms = document.querySelectorAll('.needs-validation');
+
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      const password = form.querySelector('#password');
+      const confirm = form.querySelector('#confirmPassword');
+
+      confirm.setCustomValidity('');
+
+      if (password.value !== confirm.value) {
+        confirm.setCustomValidity('Passwords do not match');
+      }
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+  </script>
+  <footer>
+    © 2025 Arsen Bakytzhanov | All Rights Reserved
+  </footer>
+</body>
+</html>
