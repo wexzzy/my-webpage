@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Community - AeonGYM</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header class="container-main site-header">
+    <div class="brand">
+      <div class="logo">Aeon<span class="gym">GYM</span></div>
+    </div>
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="index.html">Home</a>
+      <a href="training.html">Training</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="community.html">Community</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="container-main">
+    <section class="center">
+      <h2>Community & Contact</h2>
+      <p class="muted-text">Send feedback or sign up for community events.</p>
+    </section>
+
+    <section class="grid-two-columns">
+      <form class="form-card contact-form" action="#" method="post" aria-label="Contact form" id="contactForm">
+        <div class="mb-2">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required class="input-field">
+          <span class="error-msg" id="nameError"></span>
+        </div>
+        <div class="mb-2">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required class="input-field">
+          <span class="error-msg" id="emailError"></span>
+        </div>
+        <div class="mb-2">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required class="input-field">
+          <div id="passwordStrength"></div>
+          <span class="error-msg" id="passwordError"></span>
+        </div>
+        <div class="mb-2">
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" required class="input-field">
+          <span class="error-msg" id="confirmError"></span>
+        </div>
+        <div class="mb-2">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required class="input-field"></textarea>
+          <span class="error-msg" id="messageError"></span>
+        </div>
+        <button class="btn-primary-custom" type="submit">Send message</button>
+      </form>
+        <div class="form-card reviews-card">
+          <h4>Reviews</h4>
+          <table id="reviewsTable" style="width:100%; border-collapse: collapse;">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Message</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      
+        <div class="form-card events-card">
+          <h4>Events</h4>
+          <ul class="muted-text">
+            <li>Monthly challenge — 3rd Saturday</li>
+            <li>Nutrition Q&A — 2nd Wednesday</li>
+          </ul>
+        </div>
+      
+        <div class="hero-right">
+          <div class="accent-circle" aria-hidden="true"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+  
+  <script>
+    const form = document.getElementById('contactForm');
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    const passwordField = document.getElementById('password');
+    const confirmField = document.getElementById('confirmPassword');
+    const messageField = document.getElementById('message');
+    const passwordStrength = document.getElementById('passwordStrength');
+    const reviewsTableBody = document.querySelector('#reviewsTable tbody');
+    
+    function validateEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+    
+    function checkPasswordStrength(password) {
+      if(password.length < 6) return 'Weak';
+      if(password.match(/[A-Z]/) && password.match(/[0-9]/) && password.length >= 8) return 'Strong';
+      return 'Medium';
+    }
+    
+    form.addEventListener('input', () => {
+      passwordStrength.textContent = passwordField.value ? `Strength: ${checkPasswordStrength(passwordField.value)}` : '';
+    });
+    
+    form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  // Name
+  if(!nameField.value.trim()) {
+    document.getElementById('nameError').textContent = 'Name is required';
+    valid = false;
+  } else document.getElementById('nameError').textContent = '';
+
+  // Email
+  if(!validateEmail(emailField.value)) {
+    document.getElementById('emailError').textContent = 'Invalid email';
+    valid = false;
+  } else document.getElementById('emailError').textContent = '';
+
+  // Password
+  const strength = checkPasswordStrength(passwordField.value);
+  if(!passwordField.value) {
+    document.getElementById('passwordError').textContent = 'Password required';
+    valid = false;
+  } else if(strength === 'Weak') {
+    document.getElementById('passwordError').textContent = 'Password too weak';
+    valid = false;
+  } else {
+    document.getElementById('passwordError').textContent = '';
+  }
+
+  // Confirm Password
+  if(passwordField.value !== confirmField.value) {
+    document.getElementById('confirmError').textContent = 'Passwords do not match';
+    valid = false;
+  } else document.getElementById('confirmError').textContent = '';
+
+  // Message
+  if(!messageField.value.trim()) {
+    document.getElementById('messageError').textContent = 'Message required';
+    valid = false;
+  } else document.getElementById('messageError').textContent = '';
+
+  if(!valid) return;
+  const name = nameField.value.trim();
+  const message = messageField.value.trim();
+
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td>${name}</td>
+    <td class="review-msg">${message}</td>
+    <td>
+      <button class="edit-btn">Edit</button>
+      <button class="delete-btn">Delete</button>
+    </td>
+  `;
+  reviewsTableBody.appendChild(tr);
+  $(tr).hide().slideDown();
+
+  tr.querySelector('.edit-btn').addEventListener('click', () => {
+    const newMsg = prompt('Edit your review:', tr.querySelector('.review-msg').textContent);
+    if(newMsg !== null) tr.querySelector('.review-msg').textContent = newMsg;
+  });
+
+  tr.querySelector('.delete-btn').addEventListener('click', () => {
+    if(confirm('Delete this review?')) $(tr).fadeOut(() => tr.remove());
+  });
+
+  form.reset();
+  passwordStrength.textContent = '';
+});
+</script>
+  <footer class="container-main site-footer">
+    © 2025 AeonGYM | All Rights Reserved · <a href="community.html">Contact</a>
+  </footer>
+</body>
+</html>

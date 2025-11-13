@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nutrition - AeonGYM</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header class="container-main site-header">
+    <div class="brand">
+      <div class="logo">Aeon<span class="gym">GYM</span></div>
+    </div>
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="index.html">Home</a>
+      <a href="training.html">Training</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="community.html">Community</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="container-main">
+    
+    <section>
+      <div class="center">
+        <h2>Nutrition Calculator</h2>
+        <p class="muted-text">Enter your data and get your personalized nutrition plan.</p>
+      </div>
+      <section class="calculator-wrapper">
+        <div class="form-card">
+          <h3>Calorie & Macro Calculator (Mifflin–St Jeor)</h3>
+          <form id="calorie-form">
+            <div class="mb-2">
+              <label>Age:</label>
+              <input type="number" id="age" required min="10" max="100">
+            </div>
+            <div class="mb-2">
+              <label>Weight (kg):</label>
+              <input type="number" id="weight" required min="30" max="200">
+            </div>
+            <div class="mb-2">
+              <label>Height (cm):</label>
+              <input type="number" id="height" required min="120" max="230">
+            </div>
+            <div class="mb-2 sex-select">
+              <label>Sex:</label>
+              <div class="sex-buttons">
+                <input type="radio" id="male" name="sex" value="male" required>
+                <label for="male" class="sex-btn">Male</label>
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female" class="sex-btn">Female</label>
+              </div>
+            </div>
+            <div class="mb-2">
+              <label>Activity level:</label>
+              <select id="activity" required>
+                <option value="1.2">Sedentary</option>
+                <option value="1.375">Lightly active</option>
+                <option value="1.55">Moderately active</option>
+                <option value="1.725">Very active</option>
+                <option value="1.9">Extra active</option>
+              </select>
+            </div>
+            <div class="mb-2">
+              <label>Goal:</label>
+              <select id="goal" required>
+                <option value="bulk">Mass Gain</option>
+                <option value="cut">Fat Loss</option>
+                <option value="maintain">Maintenance</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary-custom">Calculate</button>
+          </form>
+          <div id="result" class="result"></div>
+        </div>
+  
+        <div class="hero-right">
+          <div class="accent-circle" aria-hidden="true"></div>
+        </div>
+      </section>
+    </div>
+    </section>
+    <div id="resultModal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h3>Results</h3>
+        <div id="modal-result"></div>
+        <button class="btn-primary-custom modal-close-btn">Close</button>
+  </div>
+  </main>
+        <script>
+       $('#calorie-form').on('submit', function(e){
+  e.preventDefault();
+  const age = +$('#age').val();
+  const weight = +$('#weight').val();
+  const height = +$('#height').val();
+  const sex = $('input[name="sex"]:checked').val();
+  const activity = +$('#activity').val();
+  const goal = $('#goal').val();
+
+  let bmr;
+  if(sex === 'male') bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+  else bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+
+  let calories = Math.round(bmr * activity);
+  if(goal === 'bulk') calories = Math.round(calories * 1.1);
+  else if(goal === 'cut') calories = Math.round(calories * 0.9);
+
+  let protein, fat, carbs;
+  if(goal === 'bulk'){
+    protein = weight * 2;
+    fat = weight * 1;
+  } else if(goal === 'cut'){
+    protein = weight * 2.2;
+    fat = weight * 1;
+  } else {
+    protein = weight * 2;
+    fat = weight * 1.2;
+  }
+
+  const proteinCal = protein * 4;
+  const fatCal = fat * 9;
+  const carbCal = calories - proteinCal - fatCal;
+  carbs = Math.round(carbCal / 4);
+
+  const resultHTML = `
+    Calories: ${calories} kcal<br>
+    Protein: ${Math.round(protein)} g<br>
+    Fat: ${Math.round(fat)} g<br>
+    Carbs: ${carbs} g
+  `;
+  showResult(resultHTML);
+});
+const modal = document.getElementById('resultModal');
+const modalResult = document.getElementById('modal-result');
+const closeBtns = document.querySelectorAll('.modal-close, .modal-close-btn');
+
+function showResult(resultHTML) {
+  modalResult.innerHTML = resultHTML;
+  modal.classList.remove('hidden'); 
+}
+
+closeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) modal.classList.add('hidden');
+});
+  </script>
+  <footer class="container-main site-footer">
+    © 2025 AeonGYM | All Rights Reserved · <a href="community.html">Contact</a>
+  </footer>
+  
+</body>
+</html>

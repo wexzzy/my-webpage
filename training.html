@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Training - AeonGYM</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header class="container-main site-header">
+    <div class="brand">
+      <div class="logo">Aeon<span class="gym">GYM</span></div>
+    </div>
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <a href="index.html">Home</a>
+      <a href="training.html">Training</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="community.html">Community</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  
+  <main class="container mt-5">
+    <div class="search-wrapper">
+      <input type="text" id="search-bar" placeholder="Search exercises..." class="form-input">
+    </div>
+    <h1 class="text-center mb-4">Select Your Exercises</h1>
+    <section id="muscle-selection" class="grid-3">
+      <div id="muscle-accordion">
+        <!-- Chest -->
+        <div class="acc-section">
+          <div class="acc-title">Chest</div>
+          <div class="acc-content">
+            <section class="grid-3">
+              <label class="exercise-option">
+                <input type="radio" name="chest" value="Bench Press">
+                <div class="exercise-card">
+                  <img src="images/training/bench.jpg" alt="Bench Press">
+                  <h5>Bench Press</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="chest" value="Incline Bench Press">
+                <div class="exercise-card">
+                  <img src="images/training/incline.jpg" alt="Incline Bench Press">
+                  <h5>Incline Bench Press</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="chest" value="Pec Deck">
+                <div class="exercise-card">
+                  <img src="images/training/pecdeck.jpg" alt="Pec Deck">
+                  <h5>Pec Deck</h5>
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
+      
+        <!-- Back -->
+        <div class="acc-section">
+          <div class="acc-title">Back</div>
+          <div class="acc-content">
+            <section class="grid-3">
+              <label class="exercise-option">
+                <input type="radio" name="back" value="Lat Pulldown">
+                <div class="exercise-card">
+                  <img src="images/training/lat.jpg" alt="Lat Pulldown">
+                  <h5>Lat Pulldown</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="back" value="Pull-Ups">
+                <div class="exercise-card">
+                  <img src="images/training/pullups.jpg" alt="Pull-Ups">
+                  <h5>Pull-Ups</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="back" value="Barbell Rows">
+                <div class="exercise-card">
+                  <img src="images/training/rows.jpg" alt="Barbell Rows">
+                  <h5>Barbell Rows</h5>
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
+      
+        <!-- Biceps -->
+        <div class="acc-section">
+          <div class="acc-title">Biceps</div>
+          <div class="acc-content">
+            <section class="grid-3">
+              <label class="exercise-option">
+                <input type="radio" name="biceps" value="Dumbbell Curls">
+                <div class="exercise-card">
+                  <img src="images/training/curls.jpg" alt="Dumbbell Curls">
+                  <h5>Dumbbell Curls</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="biceps" value="Preacher Curls">
+                <div class="exercise-card">
+                  <img src="images/training/preacher.jpg" alt="Preacher Curls">
+                  <h5>Preacher Curls</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="biceps" value="Hammer Curls">
+                <div class="exercise-card">
+                  <img src="images/training/hammer.jpg" alt="Hammer Curls">
+                  <h5>Hammer Curls</h5>
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
+      
+        <!-- Triceps -->
+        <div class="acc-section">
+          <div class="acc-title">Triceps</div>
+          <div class="acc-content">
+            <section class="grid-3">
+              <label class="exercise-option">
+                <input type="radio" name="triceps" value="Triceps Extension">
+                <div class="exercise-card">
+                  <img src="images/training/extension.jpg" alt="Triceps Extension">
+                  <h5>Triceps Extension</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="triceps" value="Dips">
+                <div class="exercise-card">
+                  <img src="images/training/dips.jpg" alt="Dips">
+                  <h5>Dips</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="triceps" value="Overhead Triceps Extensions">
+                <div class="exercise-card">
+                  <img src="images/training/overhead.jpg" alt="Overhead Triceps Extensions">
+                  <h5>Overhead Triceps Extensions</h5>
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
+      
+        <!-- Quads -->
+        <div class="acc-section">
+          <div class="acc-title">Quads</div>
+          <div class="acc-content">
+            <section class="grid-3">
+              <label class="exercise-option">
+                <input type="radio" name="quads" value="Squat">
+                <div class="exercise-card">
+                  <img src="images/training/squat.jpg" alt="Squat">
+                  <h5>Squat</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="quads" value="Leg Press">
+                <div class="exercise-card">
+                  <img src="images/training/legpress.jpg" alt="Leg Press">
+                  <h5>Leg Press</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="quads" value="Leg Extensions">
+                <div class="exercise-card">
+                  <img src="images/training/legext.jpg" alt="Leg Extensions">
+                  <h5>Leg Extensions</h5>
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
+      
+        <!-- Hamstrings -->
+        <div class="acc-section">
+          <div class="acc-title">Hamstrings</div>
+          <div class="acc-content">
+            <section class="grid-3">
+              <label class="exercise-option">
+                <input type="radio" name="hamstrings" value="Romanian Deadlift">
+                <div class="exercise-card">
+                  <img src="images/training/rdl.jpg" alt="Romanian Deadlift">
+                  <h5>Romanian Deadlift</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="hamstrings" value="Leg Curls">
+                <div class="exercise-card">
+                  <img src="images/training/legcurls.jpg" alt="Leg Curls">
+                  <h5>Leg Curls</h5>
+                </div>
+              </label>
+              <label class="exercise-option">
+                <input type="radio" name="hamstrings" value="45° Hinge">
+                <div class="exercise-card">
+                  <img src="images/training/hinge.jpg" alt="45° Hinge">
+                  <h5>45° Hinge</h5>
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <div class="text-center mt-4">
+      <button id="generate-btn" class="btn-primary-custom">Generate Plan</button>
+    </div>
+
+    <section id="plan" class="hidden mt-5">
+      <h2 class="text-center mb-3">Your Weekly Training Plan</h2>
+      <div class="table-wrapper">
+        <table id="plan-table" class="table-plan">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Exercise</th>
+              <th>Sets</th>
+              <th>Reps</th>
+            </tr>
+          </thead>
+          <tbody id="plan-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const muscleGroups = ["chest", "back", "biceps", "triceps", "quads", "hamstrings"];
+    const tableBody = document.getElementById("plan-body");
+    const planSection = document.getElementById("plan");
+    const generateBtn = document.getElementById("generate-btn");
+  
+    generateBtn.addEventListener("click", updatePlan);
+  
+    function updatePlan() {
+      const selections = {};
+      muscleGroups.forEach(group => {
+        const selected = document.querySelector(`input[name="${group}"]:checked`);
+        if (selected) selections[group] = selected.value;
+      });
+      if (Object.keys(selections).length !== muscleGroups.length) {
+        alert("Please select one exercise for each muscle group before generating your plan.");
+        return;
+      }
+      planSection.classList.remove("hidden");
+      tableBody.innerHTML = "";
+  
+      const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      const trainingDays = ["Monday", "Wednesday", "Friday"];
+  
+      week.forEach(day => {
+        if (trainingDays.includes(day)) {
+          const selectedExercises = Object.entries(selections);
+          selectedExercises.forEach(([muscle, exercise], index) => {
+            const row = document.createElement("tr");
+            if (index === 0) {
+              row.innerHTML = `
+                <td rowspan="${selectedExercises.length}">${day}</td>
+                <td>${exercise}</td>
+                <td>${muscle === "triceps" || muscle === "biceps" ? 2 : 3}</td>
+                <td>6–8</td>
+              `;
+            } else {
+              row.innerHTML = `
+                <td>${exercise}</td>
+                <td>${muscle === "triceps" || muscle === "biceps" ? 2 : 3}</td>
+                <td>6–8</td>
+              `;
+            }
+            tableBody.appendChild(row);
+          });
+        } else {
+          const restRow = document.createElement("tr");
+          restRow.innerHTML = `
+            <td>${day}</td>
+            <td colspan="3" class="rest-day">Rest</td>
+          `;
+          tableBody.appendChild(restRow);
+        }
+      });
+      planSection.scrollIntoView({ behavior: "smooth" });
+    }
+    const $sections = $('#muscle-accordion .acc-section');
+    $sections.find('.acc-content').hide();
+    $sections.first().find('.acc-content').show();
+    $('#muscle-accordion').on('click', '.acc-title', function(){
+      const $content = $(this).next('.acc-content');
+      if ($content.is(':visible')) {
+      $content.slideUp(200);
+    } else {
+      $('#muscle-accordion .acc-content').not($content).slideUp(200);
+      $content.slideDown(200);
+    }
+  });
+  $('#muscle-accordion').on('change', 'input[type="radio"]', function(){
+    const $current = $(this).closest('.acc-section');
+    const $next = $current.next('.acc-section');
+    $current.addClass('done');
+    if($next.length){
+      $current.find('.acc-content').slideUp(200);
+      $next.find('.acc-content').slideDown(200);
+      $('html, body').animate({scrollTop: $next.offset().top - 20}, 250);
+    }
+  });
+  $('#search-bar').on('input', function() {
+    const query = $(this).val().toLowerCase();
+
+    $('.exercise-card').each(function() {
+        const text = $(this).find('h5').text().toLowerCase();
+        $(this).toggle(text.includes(query));
+    });
+});
+  </script>
+  <footer class="container-main site-footer">
+    © 2025 AeonGYM | All Rights Reserved · <a href="community.html">Contact</a>
+  </footer>
+</body>
+</html>
